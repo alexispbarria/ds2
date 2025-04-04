@@ -277,6 +277,7 @@ body {
 
 <body>
 <button class="but" onclick="Bgs()">🌓</button>
+<button class="but" onclick="toggleAnimations()" style="top: 12%;">⏸️</button>
 </body>
 <style>  
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
@@ -498,6 +499,27 @@ html5wiki">¡Bienvenidos!</span>
 <script>
     var count = 0;
     var n = 10;
+    var animationsRunning = true;
+
+    function toggleAnimations() {
+        animationsRunning = !animationsRunning;
+        const state = animationsRunning ? 'running' : 'paused';
+        
+        // Pausar/reanudar todos los copos de nieve
+        document.querySelectorAll('.snow').forEach(element => {
+            element.style.animationPlayState = state;
+        });
+        
+        // Pausar/reanudar todos los círculos
+        document.querySelectorAll('.circles li').forEach(element => {
+            element.style.animationPlayState = state;
+        });
+        
+        // Pausar/reanudar el texto animado
+        document.querySelectorAll('.word').forEach(element => {
+            element.style.animationPlayState = state;
+        });
+    }
 
     function Bgs() {
         if (count === 0) {
