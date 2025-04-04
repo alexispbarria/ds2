@@ -240,23 +240,23 @@ body {
     text-decoration: none;
     right: 1%;
 }
+
+.but1 {
+    position: absolute;
+    background-color: #383838;
+    padding: 20px 8px 8px 8px;
+    border-radius: 6px;
+    border: 1px solid #707070;
+    top: 10%;
+    color: #ffffff;
+    text-decoration: none;
+    right: 1%;
+}
 	
 .but:hover {
     background-color: #000000;
 }
 
-.but1 {
-    z-index: 1000;
-    position: absolute;
-    background-color: #646464;
-    padding: 50px 8px 50px 8px;
-    border-radius: 6px;
-    border: 1px solid #707070;
-    top: 81%;
-    color: #ffffff;
-    text-decoration: none;
-    opacity: 0.8;
-}
 
 .info {
     z-index: 1000;
@@ -277,7 +277,7 @@ body {
 
 <body>
 <button class="but" onclick="Bgs()">🌓</button>
-<button class="but" onclick="toggleAnimations()" style="top: 18%;">⏸️</button>
+<button class="but1" onclick="toggleAnimations()" style="top: 18%;">⏸️</button>
 </body>
 <style>  
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
@@ -501,6 +501,34 @@ html5wiki">¡Bienvenidos!</span>
     var n = 10;
     var animationsRunning = true;
 
+    function Bgs() {
+        if (count === 0) {
+            $('body').css({'background-image': 'linear-gradient( 110.6deg,  rgba(255, 200, 0,1) 7%, rgba(255, 200, 0,1) 47.7%, rgba(255, 200, 0,1) 100.6% )'});
+        } else if (count === 1) {
+            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(255, 191, 0, 0.8) 11.2%, rgba(255, 191, 0, 0.8) 92.5% )'});
+        } else if (count === 2) {
+            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(255, 106, 0, 0.8) 11.2%, rgba(255, 106, 0, 0.8) 92.5% )'});
+        } else if (count === 3) {
+            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(150, 2, 2, 0.8) 11.2%, rgba(150, 2, 2, 0.8) 92.5% )'});
+        } else if (count === 4) {
+            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(58, 14, 201, 0.8) 11.2%, rgba(58, 14, 201, 0.8) 92.5% )'});
+        } else if (count === 5) {
+            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(25, 59, 209, 0.8) 11.2%, rgba(25, 59, 209, 0.8) 92.5% )'});
+        } else if (count === 6) {
+            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(255, 192, 203, 0.8) 11.2%, rgba(255, 192, 203, 0.8) 92.5% )'});
+        } else if (count === 7) {
+            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(90, 158, 204, 0.8) 11.2%, rgba(90, 158, 204, 0.8) 92.5% )'});
+        } else if (count === 8) {
+            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(145, 181, 162, 0.8) 11.2%, rgba(145, 181, 162, 0.8) 92.5% )'});
+        } else if (count === 9) {
+            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(1, 1, 1, 1) 11.2%, rgba(1, 1, 1, 1) 92.5% )'});
+        }
+
+        count += 1;
+        if (count === n)
+            count = 0;
+    }
+
     function toggleAnimations() {
         animationsRunning = !animationsRunning;
         const state = animationsRunning ? 'running' : 'paused';
@@ -521,33 +549,7 @@ html5wiki">¡Bienvenidos!</span>
         });
     }
 
-    function Bgs() {
-        if (count === 0) {
-            $('body').css({'background-image': 'linear-gradient( 110.6deg,  rgba(255, 200, 0,1) 7%, rgba(255, 200, 0,1) 47.7%, rgba(255, 200, 0,1) 100.6% )'});
-        } else if (count === 1) {
-            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(0, 0, 0, 0.8) 11.2%, rgba(0, 0, 0, 0.8) 92.5% )'});
-        } else if (count === 2) {
-            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(255, 0, 0, 0.8) 11.2%, rgba(255, 0, 0, 0.8) 92.5% )'});
-        } else if (count === 3) {
-            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(0, 0, 0, 0.8) 11.2%, rgba(0, 0, 0, 0.8) 92.5% )'});
-        } else if (count === 4) {
-            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(0, 0, 255, 0.8) 11.2%, rgba(0, 0, 255, 0.8) 92.5% )'});
-        } else if (count === 5) {
-            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(0, 0, 0, 0.8) 11.2%, rgba(0, 0, 0, 0.8) 92.5% )'});
-        } else if (count === 6) {
-            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(255, 192, 203, 0.8) 11.2%, rgba(255, 192, 203, 0.8) 92.5% )'});
-        } else if (count === 7) {
-            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(0, 0, 0, 0.8) 11.2%, rgba(0, 0, 0, 0.8) 92.5% )'});
-        } else if (count === 8) {
-            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(255, 255, 255, 0.8) 11.2%, rgba(255, 255, 255, 0.8) 92.5% )'});
-        } else if (count === 9) {
-            $('body').css({'background-image': 'linear-gradient( 109.6deg,  rgba(1, 1, 1, 1) 11.2%, rgba(1, 1, 1, 1) 92.5% )'});
-        }
-
-        count += 1;
-        if (count === n)
-            count = 0;
-    }
+    
 </script>
 <script>
     var words = document.getElementsByClassName('word');
